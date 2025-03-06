@@ -50,14 +50,6 @@ function App(): React.JSX.Element {
       }
     });
 
-    SeosMobileKeysModule?.getName()
-      .then((name: any) => {
-        console.log(name); // Output: "SeosMobileKeys"
-      })
-      .catch((err: any) => {
-        console.error(err);
-      });
-
     SeosMobileKeysModule?.initializeSDK()
       .then((res: any) => {
         console.log(res); // Output: "SeosMobileKeys"
@@ -90,7 +82,14 @@ function App(): React.JSX.Element {
           title="Enable Sdk"
           onPress={() => {
             const {SeosMobileKeysModule} = NativeModules;
-            SeosMobileKeysModule?.enableSDK('B5QZ-7AED-B2QR-AHYV');
+            SeosMobileKeysModule?.enableSDK('AP6E-GQ4B-XDZU-BDX5');
+          }}
+        />
+        <Button
+          title="setupEndpoint"
+          onPress={() => {
+            const {SeosMobileKeysModule} = NativeModules;
+            SeosMobileKeysModule?.setupEndpoint();
           }}
         />
 

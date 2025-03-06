@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">doorunlock</string>
+
+    <!-- NFC/HCE -->
+    <string name="hceServiceDescription">Mobile Keys HCE Example</string>
+    <string name="hceServiceAidGroupDescription">AID group description</string>
+
+
 </resources>

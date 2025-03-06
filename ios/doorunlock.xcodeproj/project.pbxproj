@@ -10,7 +10,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		886D62F1A76DC7DD92B486E3 /* libPods-doorunlock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A5CA11CD5EDAE360CAC333 /* libPods-doorunlock.a */; };
 		C0FC0EB75954CFD28B0FA8EA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		EBD62DF12D6DD8A400DB1457 /* MobileKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD62DF02D6DD8A400DB1457 /* MobileKeysController.swift */; };
 		EBDA606C2D6DC34B00DE5C50 /* BerTlv.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB07AF32D6DAE05006C9A1B /* BerTlv.xcframework */; };
@@ -26,13 +25,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = doorunlock/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = doorunlock/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = doorunlock/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		17A5CA11CD5EDAE360CAC333 /* libPods-doorunlock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-doorunlock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = doorunlock/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = doorunlock/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5DF2D6CC1F5671A09757A8B /* Pods-doorunlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doorunlock.release.xcconfig"; path = "Target Support Files/Pods-doorunlock/Pods-doorunlock.release.xcconfig"; sourceTree = "<group>"; };
 		EB1F353B2D6D971A00EBE670 /* SeosMobileKeysSDK.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:333BNLD22V:ASSAABLOY AB"; lastKnownFileType = wrapper.xcframework; name = SeosMobileKeysSDK.xcframework; path = Mobile_Keys_IOS_SDK/Debug/SeosMobileKeysSDK.xcframework; sourceTree = "<group>"; };
-		EB1F353F2D6D976D00EBE670 /* libBerTlv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBerTlv.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1F35412D6D994E00EBE670 /* libBerTlv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBerTlv.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB07AF32D6DAE05006C9A1B /* BerTlv.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BerTlv.xcframework; path = Mobile_Keys_IOS_SDK/Debug/BerTlv.xcframework; sourceTree = "<group>"; };
 		EBD62DF02D6DD8A400DB1457 /* MobileKeysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MobileKeysController.swift; path = doorunlock/MobileKeysController.swift; sourceTree = "<group>"; };
 		EBDA606D2D6DC52200DE5C50 /* JSONModel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = JSONModel.xcframework; path = Mobile_Keys_IOS_SDK/Debug/JSONModel.xcframework; sourceTree = "<group>"; };
@@ -51,7 +47,6 @@
 				EBDA60702D6DC52B00DE5C50 /* CocoaLumberjack.xcframework in Frameworks */,
 				EBDA606E2D6DC52200DE5C50 /* JSONModel.xcframework in Frameworks */,
 				EBDA606C2D6DC34B00DE5C50 /* BerTlv.xcframework in Frameworks */,
-				886D62F1A76DC7DD92B486E3 /* libPods-doorunlock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,11 +75,8 @@
 				EBDA606F2D6DC52B00DE5C50 /* CocoaLumberjack.xcframework */,
 				EBDA606D2D6DC52200DE5C50 /* JSONModel.xcframework */,
 				EBB07AF32D6DAE05006C9A1B /* BerTlv.xcframework */,
-				EB1F35412D6D994E00EBE670 /* libBerTlv.a */,
-				EB1F353F2D6D976D00EBE670 /* libBerTlv.a */,
 				EB1F353B2D6D971A00EBE670 /* SeosMobileKeysSDK.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				17A5CA11CD5EDAE360CAC333 /* libPods-doorunlock.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,7 +149,8 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1620;
@@ -313,7 +306,7 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.shashigroup.reservation.staging;
 				PRODUCT_NAME = doorunlock;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/arunpatel/Documents/projects/demos/doorunlock/ios/doorunlock/SeosMobileKeysModule.h;
+				SWIFT_OBJC_BRIDGING_HEADER = SeosMobileKeysModule.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -347,7 +340,7 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.shashigroup.reservation.staging;
 				PRODUCT_NAME = doorunlock;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/arunpatel/Documents/projects/demos/doorunlock/ios/doorunlock/SeosMobileKeysModule.h;
+				SWIFT_OBJC_BRIDGING_HEADER = SeosMobileKeysModule.h;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -386,6 +379,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -426,6 +420,7 @@
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OBJC_BRIDGING_HEADER = SeosMobileKeysModule.h;
 				USE_HERMES = true;
 			};
 			name = Debug;
@@ -463,6 +458,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -494,6 +490,8 @@
 				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = SeosMobileKeysModule.h;
 				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
