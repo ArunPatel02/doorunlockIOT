@@ -111,13 +111,7 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
             Log.d(TAG, "Not Personalized, showing PersonalizationView")
         }
         mobileKeysManager.mobileKeys.applicationStartup(mobileKeysCallbackInitialSetup)
-        readerConnectionCallback = ReaderConnectionCallback(activity.applicationContext)
-        readerConnectionCallback!!.registerReceiver(this)
 
-        hceConnectionCallback = HceConnectionCallback(activity.applicationContext)
-        hceConnectionCallback!!.registerReceiver(this)
-        closestLockTrigger = ClosestLockTrigger(this)
-        scanConfiguration?.rootOpeningTrigger?.add(closestLockTrigger)
     }
 
     fun isEndpointSetup() : Boolean{
@@ -156,6 +150,13 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
 
     fun onStartUpComplete() {
         Log.d(TAG, "onStartUpComplete: steupcompleted")
+        readerConnectionCallback = ReaderConnectionCallback(activity.applicationContext)
+        readerConnectionCallback!!.registerReceiver(this)
+
+        hceConnectionCallback = HceConnectionCallback(activity.applicationContext)
+        hceConnectionCallback!!.registerReceiver(this)
+        closestLockTrigger = ClosestLockTrigger(this)
+        scanConfiguration?.rootOpeningTrigger?.add(closestLockTrigger)
     }
 
     fun didPressRegistrationButton(code : String){
@@ -184,7 +185,8 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
 
     fun toggleScanning() : Boolean {
         Log.d(TAG, "startScanning: called ${scanConfiguration}")
-        val controller = mobileKeysManager.readerConnectionController
+//        val controller = mobileKeysManager.readerConnectionController
+        val controller = MobileKeysApi.getInstance().readerConnectionController
         if (scanConfiguration != null && mobileKeysManager.mobileKeys.listMobileKeys().count() > 0) {
             try {
                 val lockServiceCode: Int = mobileKeysManager.mobileKeys.listMobileKeys().firstOrNull()?.cardNumber?.toIntOrNull() ?: 1
@@ -195,9 +197,22 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
                 scanConfiguration!!.setLockServiceCodes(1)
             }
             if(controller.isScanning){
-                controller.stopScanning()
+//                controller.stopScanning()
+//                closestLockTrigger?.start()
+//                Log.d(TAG, "toggleScanning: closset rader is started ${closestLockTrigger?.isStarted}")
+                val radar = controller.listReaders()
+                val countRadar = controller.countReaders()
+                Log.d(TAG, "toggleScanning: radar ${radar} ${countRadar}")
+//                closestLockTrigger?.openClosestReader()
             }else{
+//                    closestLockTrigger?.start()
+//                controller.startScanning()
+                controller.enableHce()
                 controller.startScanning()
+//                val radar = controller.listReaders()
+//                val countRadar = controller.countReaders()
+//                Log.d(TAG, "toggleScanning: radar ${radar} ${countRadar}")
+//                controller.openReader(closestLockTrigger?.closestReader , OpeningType.APPLICATION_SPECIFIC)
             }
             Log.d(TAG, "startScanning: ${controller.isScanning}")
         }
@@ -210,6 +225,7 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
     }
 
     fun scanningState() : Boolean{
+        Log.d(TAG, "scanningState: called ${MobileKeysApi.getInstance().readerConnectionController.isScanning}")
         return MobileKeysApi.getInstance().readerConnectionController.isScanning
     }
 
@@ -253,7 +269,7 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
     }
 
     override fun onReaderConnectionOpened(p0: Reader?, p1: OpeningType?) {
-        Log.d(TAG, "onReaderConnectionOpened: called ${p1}")
+        Log.d(TAG, "onReaderConnectionOpened: called ${p0} ${p1}")
     }
 
     override fun onReaderConnectionClosed(p0: Reader?, p1: OpeningResult?) {
@@ -291,6 +307,13 @@ class MobileKeysController (val activity : Activity) : MobileKeysApiFactory ,
 
     override fun onLockInRange(lockInRange: Boolean) {
         Log.d(TAG, "onLockInRange: ${lockInRange}")
+//        if(lockInRange){
+            val controller = MobileKeysApi.getInstance().readerConnectionController
+            val radar = controller.listReaders()
+            val countRadar = controller.countReaders()
+            Log.d(TAG, "onLockInRange: radar ${radar} ${countRadar}")
+//            controller.openReader(closestLockTrigger?.closestReader , OpeningType.APPLICATION_SPECIFIC)
+//        }
     }
 
 }

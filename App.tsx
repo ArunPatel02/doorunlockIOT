@@ -82,7 +82,7 @@ function App(): React.JSX.Element {
           title="Enable Sdk"
           onPress={() => {
             const {SeosMobileKeysModule} = NativeModules;
-            SeosMobileKeysModule?.enableSDK('AP6E-GQ4B-XDZU-BDX5');
+            SeosMobileKeysModule?.enableSDK('AYGA-SK2R-F5TJ-XMSY');
           }}
         />
         <Button

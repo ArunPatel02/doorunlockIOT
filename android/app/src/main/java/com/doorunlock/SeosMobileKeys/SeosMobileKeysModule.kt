@@ -137,6 +137,34 @@ class SeosMobileKeysModule(private val reactContext: ReactApplicationContext): R
             promise.resolve(state)
         }
 
+        @ReactMethod
+    fun getEndpointSetupState(promise: Promise){
+        val state = MobileKeysController?.isEndpointSetup()
+        promise.resolve(state)
+    }
+
+    @ReactMethod
+    fun refreshTheKeys(){
+//        MobileKeysController?.refreshTheKeys()
+    }
+
+    @ReactMethod
+    fun mobileKeyStartup(promise: Promise){
+//        val state = MobileKeysController?.getMobileKeyStartup()
+        val state = true
+        promise.resolve(state)
+    }
+
+    @ReactMethod
+    fun stopScanning(){
+        MobileKeysController?.stopScanning()
+    }
+
+    @ReactMethod
+    fun unregisterEndpoint(){
+//        MobileKeysController?.unregisterEndpoint()
+    }
+
 //    fun getSupportedEvents(): List<String> {
 //        return listOf("onMessageFromSeos")
 //    }

@@ -41,7 +41,7 @@ class ClosestLockTrigger(private val listener: LockInRangeListener) : ManualOpen
     }
 
     override fun onStart() {
-        Log.d(TAG, "onStart: called")
+        Log.d(TAG, "onStart: called ${bleScanner.listReaders()}")
         super.onStart()
         updateLockInRangeStatus(bleScanner.listReaders().isEmpty())
     }
